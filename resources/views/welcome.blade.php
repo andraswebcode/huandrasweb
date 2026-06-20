@@ -1,694 +1,270 @@
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[NEV] – Senior PHP/Laravel fejlesztő. Beépülök a csapatodba, gyorsan produktív vagyok, és nem kell betanítani.">
-    <title>[NEV] – Laravel & Vue.js Fejlesztő</title>
+@include('layout.header')
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --bg:        #0a0a0b;
-            --bg-card:   #111113;
-            --bg-subtle: #161618;
-            --border:    rgba(255,255,255,0.08);
-            --border-md: rgba(255,255,255,0.13);
-            --text:      #f0ede8;
-            --text-mute: #7a7774;
-            --text-dim:  #4a4845;
-            --accent:    #c8a96e;
-            --accent-lo: rgba(200,169,110,0.12);
-            --accent-hi: #e2c896;
-            --serif:     'Instrument Serif', Georgia, serif;
-            --sans:      'DM Sans', system-ui, sans-serif;
-            --radius:    12px;
-            --radius-lg: 20px;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--sans);
-            font-size: 16px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ── NAV ── */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 1.25rem 2.5rem;
-            background: rgba(10,10,11,0.85);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-logo {
-            font-family: var(--serif);
-            font-size: 1.2rem;
-            color: var(--text);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a {
-            color: var(--text-mute);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 400;
-            letter-spacing: 0.02em;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text); }
-        .nav-cta {
-            background: var(--accent-lo);
-            border: 1px solid rgba(200,169,110,0.3);
-            color: var(--accent) !important;
-            padding: 0.5rem 1.25rem;
-            border-radius: 6px;
-            transition: background 0.2s, border-color 0.2s !important;
-        }
-        .nav-cta:hover {
-            background: rgba(200,169,110,0.2) !important;
-            border-color: rgba(200,169,110,0.5) !important;
-            color: var(--accent-hi) !important;
-        }
-
-        /* ── LAYOUT ── */
-        .container { max-width: 1060px; margin: 0 auto; padding: 0 2rem; }
-        section { padding: 6rem 0; }
-
-        /* ── HERO ── */
-        #hero {
-            min-height: 100vh;
-            display: flex; align-items: center;
-            padding-top: 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute; inset: 0;
-            background:
-                radial-gradient(ellipse 60% 50% at 70% 40%, rgba(200,169,110,0.05) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,169,110,0.03) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            font-size: 0.75rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 0.12em;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-        .hero-eyebrow::before {
-            content: '';
-            display: block; width: 24px; height: 1px;
-            background: var(--accent);
-        }
-        h1 {
-            font-family: var(--serif);
-            font-size: clamp(2.8rem, 5vw, 4.2rem);
-            font-weight: 400;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.5rem;
-        }
-        h1 em {
-            font-style: italic;
-            color: var(--accent);
-        }
-        .hero-sub {
-            font-size: 1.05rem;
-            color: var(--text-mute);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-            max-width: 440px;
-        }
-        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: var(--accent);
-            color: #1a1508;
-            font-family: var(--sans);
-            font-size: 0.9rem; font-weight: 500;
-            padding: 0.85rem 1.75rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            transition: background 0.2s, transform 0.15s;
-        }
-        .btn-primary:hover { background: var(--accent-hi); transform: translateY(-1px); }
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: transparent;
-            color: var(--text-mute);
-            font-family: var(--sans);
-            font-size: 0.9rem; font-weight: 400;
-            padding: 0.85rem 1.75rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border-md);
-            text-decoration: none;
-            transition: color 0.2s, border-color 0.2s;
-        }
-        .btn-secondary:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
-
-        /* Hero right – stats */
-        .hero-stats {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-        }
-        .stat-box {
-            background: var(--bg-card);
-            padding: 2rem 1.75rem;
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        .stat-box:nth-child(2n) { border-right: none; }
-        .stat-box:nth-last-child(-n+2) { border-bottom: none; }
-        .stat-num {
-            font-family: var(--serif);
-            font-size: 2.8rem;
-            font-weight: 400;
-            line-height: 1;
-            color: var(--accent);
-            margin-bottom: 0.4rem;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: var(--text-mute);
-            line-height: 1.4;
-        }
-
-        /* ── SECTION HEADER ── */
-        .section-header { margin-bottom: 3.5rem; }
-        .section-eyebrow {
-            font-size: 0.7rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 0.14em;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-        h2 {
-            font-family: var(--serif);
-            font-size: clamp(2rem, 3.5vw, 2.8rem);
-            font-weight: 400;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-        }
-        h2 em { font-style: italic; color: var(--accent); }
-        .section-lead {
-            margin-top: 1rem;
-            font-size: 1rem;
-            color: var(--text-mute);
-            max-width: 520px;
-            line-height: 1.7;
-        }
-
-        /* ── ABOUT ── */
-        #about { border-top: 1px solid var(--border); }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 5rem;
-            align-items: start;
-        }
-        .about-left { position: sticky; top: 7rem; }
-        .about-body p {
-            color: var(--text-mute);
-            margin-bottom: 1.25rem;
-            line-height: 1.8;
-        }
-        .about-body p strong { color: var(--text); font-weight: 500; }
-        .tech-list {
-            display: flex; flex-wrap: wrap; gap: 0.5rem;
-            margin-top: 2rem;
-        }
-        .tech-tag {
-            font-size: 0.78rem;
-            padding: 0.35rem 0.85rem;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            color: var(--text-mute);
-            transition: border-color 0.2s, color 0.2s;
-        }
-        .tech-tag:hover { border-color: var(--accent); color: var(--accent); }
-        .tech-tag.accent {
-            border-color: rgba(200,169,110,0.4);
-            color: var(--accent);
-            background: var(--accent-lo);
-        }
-
-        /* ── SERVICES ── */
-        #services { border-top: 1px solid var(--border); }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            margin-top: 3rem;
-        }
-        .service-card {
-            background: var(--bg-card);
-            padding: 2.25rem 2rem;
-            border-right: 1px solid var(--border);
-            transition: background 0.25s;
-            position: relative;
-        }
-        .service-card:last-child { border-right: none; }
-        .service-card:hover { background: var(--bg-subtle); }
-        .service-icon {
-            width: 44px; height: 44px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-        .service-card h3 {
-            font-family: var(--serif);
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 0.75rem;
-        }
-        .service-card p {
-            font-size: 0.875rem;
-            color: var(--text-mute);
-            line-height: 1.7;
-        }
-        .service-list {
-            margin-top: 1.25rem;
-            list-style: none;
-        }
-        .service-list li {
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            padding: 0.3rem 0;
-            border-top: 1px solid var(--border);
-            display: flex; align-items: center; gap: 0.5rem;
-        }
-        .service-list li::before {
-            content: '';
-            width: 4px; height: 4px;
-            border-radius: 50%;
-            background: var(--accent);
-            flex-shrink: 0;
-        }
-
-        /* ── PROCESS ── */
-        #process { border-top: 1px solid var(--border); }
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .process-step { position: relative; }
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 1.1rem; left: calc(100% + 0.25rem); right: -1.75rem;
-            height: 1px;
-            background: var(--border);
-        }
-        .process-step:last-child::after { display: none; }
-        .step-num {
-            font-family: var(--serif);
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        .process-step h3 {
-            font-size: 0.95rem; font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        .process-step p {
-            font-size: 0.82rem;
-            color: var(--text-mute);
-            line-height: 1.6;
-        }
-
-        /* ── REFERENCES ── */
-        #references { border-top: 1px solid var(--border); }
-        .ref-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-        .ref-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            transition: border-color 0.25s;
-        }
-        .ref-card:hover { border-color: var(--border-md); }
-        .ref-quote {
-            font-family: var(--serif);
-            font-size: 1.05rem;
-            font-style: italic;
-            line-height: 1.6;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-        }
-        .ref-author {
-            display: flex; align-items: center; gap: 0.75rem;
-        }
-        .ref-avatar {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: var(--accent-lo);
-            border: 1px solid rgba(200,169,110,0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.75rem; font-weight: 500;
-            color: var(--accent);
-        }
-        .ref-name { font-size: 0.875rem; font-weight: 500; }
-        .ref-role { font-size: 0.78rem; color: var(--text-mute); }
-        .ref-tag {
-            margin-left: auto;
-            font-size: 0.7rem;
-            padding: 0.25rem 0.7rem;
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            color: var(--text-dim);
-        }
-
-        /* ── CONTACT ── */
-        #contact { border-top: 1px solid var(--border); }
-        .contact-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-        label {
-            font-size: 0.78rem; font-weight: 500;
-            color: var(--text-mute);
-            text-transform: uppercase; letter-spacing: 0.08em;
-        }
-        input[type="text"], input[type="email"], textarea {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 0.85rem 1rem;
-            color: var(--text);
-            font-family: var(--sans);
-            font-size: 0.9rem;
-            width: 100%;
-            transition: border-color 0.2s;
-            outline: none;
-        }
-        input:focus, textarea:focus { border-color: rgba(200,169,110,0.5); }
-        input::placeholder, textarea::placeholder { color: var(--text-dim); }
-        textarea { resize: vertical; min-height: 130px; }
-        .contact-right { padding-top: 0.5rem; }
-        .contact-right p {
-            color: var(--text-mute);
-            font-size: 0.95rem;
-            line-height: 1.75;
-            margin-bottom: 2rem;
-        }
-        .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
-        .contact-link {
-            display: flex; align-items: center; gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-mute);
-            font-size: 0.875rem;
-            transition: color 0.2s;
-            padding: 0.75rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            background: var(--bg-card);
-        }
-        .contact-link:hover { color: var(--text); border-color: var(--border-md); }
-        .contact-link svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--accent); }
-
-        /* ── FOOTER ── */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-dim);
-        }
-
-        /* ── DIVIDER LINE ── */
-        .accent-line {
-            width: 40px; height: 1px;
-            background: var(--accent);
-            margin: 1.5rem 0;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-            nav { padding: 1rem 1.5rem; }
-            .nav-links { display: none; }
-            .hero-grid, .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-            .about-left { position: static; }
-            .services-grid { grid-template-columns: 1fr; }
-            .service-card { border-right: none; border-bottom: 1px solid var(--border); }
-            .service-card:last-child { border-bottom: none; }
-            .process-grid { grid-template-columns: 1fr 1fr; }
-            .process-step::after { display: none; }
-            .ref-grid { grid-template-columns: 1fr; }
-            section { padding: 4rem 0; }
-        }
-
-        @media (max-width: 520px) {
-            .process-grid { grid-template-columns: 1fr; }
-            .hero-stats { grid-template-columns: 1fr 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-{{-- ── NAVIGATION ── --}}
-<nav>
-    <a href="#hero" class="nav-logo">[NEV]</a>
-    <ul class="nav-links">
-        <li><a href="#about">Rólam</a></li>
-        <li><a href="#services">Mivel segíthetek</a></li>
-        <li><a href="#references">Referenciák</a></li>
-        <li><a href="#contact" class="nav-cta">Kapcsolat</a></li>
-    </ul>
-</nav>
-
-{{-- ── HERO ── --}}
+<!-- HERO -->
 <section id="hero">
     <div class="hero-bg"></div>
     <div class="container">
         <div class="hero-grid">
             <div>
-                <div class="hero-eyebrow">Laravel &amp; Vue.js fejlesztő · Szekszárd</div>
-                <h1>Beépülök a csapatodba,<br><em>azonnal produktívan.</em></h1>
+                <div class="hero-eyebrow">Szabadúszó webfejlesztő</div>
+                <h1>Tövisháti András vagyok <em> szabadúszó webfejlesztő</em></h1>
+
                 <p class="hero-sub">
-                    Tapasztalt medior fejlesztő vagyok, aki IT cégeknek nyújt kapacitást órabérben vagy
-                    projektalapon. Nem kell betanítani – gyorsan beilleszkedem, hozom a saját munkamódszeremet.
+                    7 éve foglalkozom SaaS alkalmazások, és egyedi wordpress bővítmények fejlesztésével. Eleinte csak hobbiból fejlesztettem, ma már cégeknek segítek be a fejlesztésbe.
+                    <br>
+                    Dolgozzunk együtt :-)
                 </p>
                 <div class="btn-group">
                     <a href="#contact" class="btn-primary">
                         Írj nekem
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
                     <a href="#about" class="btn-secondary">Bővebben rólam</a>
                 </div>
             </div>
+
             <div>
-                <div class="hero-stats">
-                    <div class="stat-box">
-                        <div class="stat-num">6+</div>
-                        <div class="stat-label">év tapasztalat<br>webfejlesztésben</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-num">30+</div>
-                        <div class="stat-label">lezárt projekt<br>különböző iparágban</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-num">48h</div>
-                        <div class="stat-label">válaszidő és<br>beépülési idő</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-num">100%</div>
-                        <div class="stat-label">remote-képes,<br>rugalmas ütemezés</div>
-                    </div>
+                <div class="hero-profile">
+                    <img src="profile.png" alt="">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-{{-- ── ABOUT ── --}}
+<!-- ABOUT -->
 <section id="about">
     <div class="container">
         <div class="about-grid">
             <div class="about-left">
                 <div class="section-header">
                     <p class="section-eyebrow">Rólam</p>
-                    <h2>Fejlesztő,<br>aki <em>érti</em><br>az üzleti oldalt is</h2>
+                    <h2>7 éve csinálom,<br><em>mert szeretem.</em></h2>
                     <div class="accent-line"></div>
                 </div>
                 <div class="tech-list">
                     <span class="tech-tag accent">Laravel</span>
                     <span class="tech-tag accent">Vue.js</span>
+                    <span class="tech-tag accent">React.js</span>
+                    <span class="tech-tag accent">Angular</span>
                     <span class="tech-tag accent">PHP</span>
+                    <span class="tech-tag accent">WordPress</span>
+                    <span class="tech-tag accent">Alpine.js</span>
+                    <span class="tech-tag accent">Inertia</span>
                     <span class="tech-tag">MySQL</span>
                     <span class="tech-tag">REST API</span>
                     <span class="tech-tag">Git</span>
                     <span class="tech-tag">Docker</span>
-                    <span class="tech-tag">React</span>
                     <span class="tech-tag">Nuxt</span>
-                    <span class="tech-tag">Tailwind</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Tailwind.css</span>
                     <span class="tech-tag">Linux</span>
                     <span class="tech-tag">CI/CD</span>
+                    <span class="tech-tag">OpenAI</span>
                 </div>
             </div>
             <div class="about-body">
                 <p>
-                    <strong>[NEV] vagyok</strong>, freelance webfejlesztő Szekszárdról, 6+ évnyi tapasztalattal
-                    PHP/Laravel és Vue.js területen. Elsősorban IT cégeknek dolgozom be – legyen szó
-                    kapacitáshiányról, egyedi projektről, vagy egy meglévő csapat tehermentesítéséről.
+                    7 évvel ezelőtt a zenekaromnak szüksége volt egy weboldalra. Arra gondoltam, hogy <strong>informatikai szakos voltam a gimnáziumban</strong>, ezt talán én is meg tudom csinálni. Ekkor ismerkedtem meg a <strong>WordPress</strong>-szel.
                 </p>
+
                 <p>
-                    Amit a legtöbb cég értékel bennem: <strong>gyorsan produktív vagyok.</strong>
-                    Megszoktam, hogy egy létező codebase-be kell belevágni, megérteni a struktúrát, és hamar
-                    értéket teremteni. Nem kell hónapokig betanítanom magam.
+                    Évekig hobbi szinten fejlesztettem plugineket, amelyeket feltöltöttem <strong>az <a href="#">Envato marketplace-re</a>, ahol számos 5 csillagos értékelést kaptak.</strong> Ezek jelentették az első komoly sikerélményeimet.
                 </p>
+
                 <p>
-                    Az évek során dolgoztam e-commerce rendszereken, belső vállalati eszközökön, SaaS
-                    alkalmazásokon és egyedi API-integráción egyaránt. Értem az üzleti kontextust is –
-                    nemcsak kódot írok, hanem <strong>megoldásokat szállítok.</strong>
+                    Hamar rájöttem, hogy a WordPress önmagában nem minden. Komolyabb frameworkök elsajátításával összetettebb alkalmazásokat építhetek, és értékesebb szakemberré válhatok a piacon. Ekkor kezdtem el tanulni a <strong>Laravelt, a Reactet, a Vue.js-t, az Angulart</strong> és számos más keretrendszert.
                 </p>
+
                 <p>
-                    Távolról dolgozom, de elérhető vagyok, kommunikatív, és belefér az időnkénti személyes egyeztetés is.
-                    Ha kapacitáshiányod van, vagy egy meglévő projektre kellenék – keress meg.
+                    <strong>3 éve dolgozom szabadúszóként.</strong> Többnyire IT-cégeknek végzek fejlesztési munkákat, de készítettem már weboldalakat, webáruházakat, teljes platformokat és CRM-rendszereket is a nulláról.
                 </p>
+
+                <p>
+                    Tapasztalat tekintetében valahol a junior és a senior szint között helyezem el magam. Ez azt jelenti, hogy még bőven van hová fejlődnöm, ugyanakkor már nincs szükség folyamatos iránymutatásra, és nagyobb felelősséggel járó feladatokat is nyugodtan rám lehet bízni.
+                </p>
+
+                <p>
+                    Szeretek <strong>hosszú távú együttműködésekben</strong> gondolkodni, ezért ügyfeleimmel nem csupán egy-egy projekt erejéig dolgozom együtt. Fontos számomra a <strong>megbízhatóság és a folyamatos kapcsolattartás:</strong> elérhető vagyok, gyorsan reagálok, és a projekt átadása után sem tűnök el.
+                </p>
+
+                <div class="ai-callout">
+                    <div class="ai-callout-label">Az AI-ról őszintén</div>
+                    <p>
+                        Mindenki használ már AI-t a fejlesztéshez – én is. De fontos a különbség:
+                        nálam az AI eszköz, nem helyettesítő. Minden generált kódot átnézek, megértem,
+                        és csak akkor commitolom, ha felelősséget tudok vállalni érte.
+                        A "vibe coding" gyors, de töredékeny. Én inkább lassabb, de stabil kódot szállítok.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-{{-- ── SERVICES ── --}}
+<!-- WHY -->
+<section id="why">
+    <div class="hero-bg"></div>
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="section-eyebrow">Miért dolgozz velem</div>
+                <h2>Nem fizetsz többet,<br>mint amennyit<br><em>tényleg kaptál.</em></h2>
+                <div class="accent-line"></div>
+                <div class="hero-argument">
+                    Egy alkalmazott havi bérét akkor is fizeted, ha épp nincs projekt. Én óradíjban dolgozom –
+                    <strong>csak azt számlázom, amit valóban elvégeztem.</strong> Nem több, nem kevesebb.
+                </div>
+            </div>
+
+            <div>
+                <div class="hero-compare">
+                    <div class="compare-header">
+                        <div class="compare-col-label">Főállású alkalmazott</div>
+                        <div class="compare-col-label">Szabadúszó</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="compare-cell bad"><span class="cross">✕</span>Fix havi bér, munka nélkül is</div>
+                        <div class="compare-cell"><span class="check">✓</span>Csak a ténylegesen elvégzett munka</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="compare-cell bad"><span class="cross">✕</span>Betanítás, onboarding hetekig</div>
+                        <div class="compare-cell"><span class="check">✓</span>48 órán belül produktív</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="compare-cell bad"><span class="cross">✕</span>Járulékok, adminisztráció</div>
+                        <div class="compare-cell"><span class="check">✓</span>Egyszerű számlás együttműködés</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="compare-cell bad"><span class="cross">✕</span>Ha nincs munka, ott ül</div>
+                        <div class="compare-cell"><span class="check">✓</span>Rugalmas – annyi, amennyi kell</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="compare-cell bad"><span class="cross">✕</span>Felmondási idő, kötelezettség</div>
+                        <div class="compare-cell"><span class="check">✓</span>Rövid és hosszú táv egyaránt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
 <section id="services">
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Mivel segíthetek</p>
-            <h2>Hol <em>kapcsolódhatok be</em><br>a munkátokba</h2>
-            <p class="section-lead">Rugalmasan dolgozom – órabérben, napi díjban, vagy projektalapon. A feladat szabja meg a formátumot.</p>
+            <h2>Hol tudok <em>bekapcsolódni</em></h2>
+            <p class="section-lead">Órabérben, napi díjban, vagy projektalapon – a feladat szabja meg a formát.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                     </svg>
                 </div>
                 <h3>Csapatba beépülés</h3>
-                <p>Beállok a meglévő fejlesztési csapatba medior fejlesztőként. Vállalok feladatokat sprintből, bugfixet, feature fejlesztést.</p>
-                <ul class="service-list">
-                    <li>Scrum / Agile munkamód</li>
-                    <li>Laravel, Vue.js, PHP</li>
-                    <li>Órabér alapú együttmüködés</li>
-                    <li>Rövid és hosszú távon is</li>
-                </ul>
+                <p>Beállok a meglévő fejlesztői csapatba. Vállalok sprintből feladatot, bugfixet, feature fejlesztést – a ti folyamataitokhoz igazodva.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
                     </svg>
                 </div>
-                <h3>Projekt kiszervezés</h3>
-                <p>Ha van egy projekt, amire nincs belső kapacitás, átveszem és önállóan viszem végig – kommunikálva a haladást.</p>
-                <ul class="service-list">
-                    <li>Egyedi webes alkalmazások</li>
-                    <li>API fejlesztés, integráció</li>
-                    <li>Frontend &amp; backend együtt</li>
-                    <li>Átadás, dokumentáció</li>
-                </ul>
+                <h3>Új funkciók fejlesztése</h3>
+                <p>Van egy új ötlet, modul vagy üzleti igény? Megtervezem és lefejlesztem az új funkciókat úgy, hogy azok illeszkedjenek a meglévő rendszerhez és hosszú távon is fenntarthatók maradjanak.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="13 2 13 9 20 9"/><path d="M20 14.5V7l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7.5"/><path d="M15 19l2 2 5-5"/>
                     </svg>
                 </div>
-                <h3>Kód átvizsgálás &amp; refaktor</h3>
-                <p>Meglévő, régi codebase átvilágítása, tisztítása, modernizálása. Rálátást adok és javítok.</p>
-                <ul class="service-list">
-                    <li>Legacy PHP / Laravel</li>
-                    <li>Code review, audit</li>
-                    <li>Teljesítmény optimalizálás</li>
-                    <li>Technikai adósság csökkentés</li>
-                </ul>
+                <h3>Projektmentés & gyorsítás</h3>
+                <p>Sok a nyitott task, csúsznak a fejlesztések vagy megakadt a projekt? Segítek ledolgozni a lemaradást, rendet tenni a prioritások között és új lendületet adni a haladásnak.</p>
             </div>
         </div>
     </div>
 </section>
 
-{{-- ── PROCESS ── --}}
-<section id="process">
+<!-- PROJECTS -->
+<section id="projects">
     <div class="container">
         <div class="section-header">
-            <p class="section-eyebrow">Hogyan dolgozom</p>
-            <h2>Egyszerű, <em>átlátható</em> folyamat</h2>
+            <p class="section-eyebrow">Saját projektek</p>
+            <h2>Amit <em>hobbiból</em> csináltam</h2>
+            <p class="section-lead">Nem minden fejlesztés ügyfélmunka – ezeket magamnak, kíváncsiságból építettem.</p>
         </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="step-num">01</div>
-                <h3>Rövid egyeztetés</h3>
-                <p>30 perces call, ahol átbeszéljük a feladatot, az elvárásokat és az ütemezést.</p>
+        <div class="projects-grid">
+            <div class="project-card project-placeholder">
+                <div class="project-type">SaaS / webapp</div>
+                <h3>PixKreator</h3>
+                <p>PixKreator egy Vue.js és Vuetify alapú egyoldalas alkalmazás (SPA), amely gyors és reszponzív felhasználói élményt biztosít. A backend Laravelre épül, MySQL adatbázist használ, míg a megjelenést Tailwind CSS alapú dizájn támogatja. A frontend és a backend REST API-n keresztül kommunikál, így a projekt jól szemlélteti a frontend- és backend-fejlesztésben szerzett tapasztalataimat, valamint a modern webalkalmazások teljes körű fejlesztésében való jártasságomat.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Laravel</span>
+                    <span class="project-tag">Vue.js</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="#" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
             </div>
-            <div class="process-step">
-                <div class="step-num">02</div>
-                <h3>Ajánlat &amp; feltételek</h3>
-                <p>Átlátható órabér vagy projektár, egyértelmű keretekkel. Nincs rejtett plusz.</p>
+            <div class="project-card project-placeholder">
+                <div class="project-type">Nyílt forráskódú</div>
+                <h3>GrafikJS</h3>
+                <p>GrafikJS egy interaktív JavaScript könyvtár, amelyet skálázható vektorgrafikák (SVG) létrehozására fejlesztettem webalkalmazásokhoz. Kiválóan használható React, Angular vagy Vue.js alapú projektekben, és egy rugalmas, könnyen használható API-t biztosít dinamikus grafikák készítéséhez. Kétrétegű architektúrájának köszönhetően külön kezeli a megjelenítést és az interakciókat, emellett támogatja az animációkat és az összetett, egymásba ágyazott grafikai elemek kezelését. A projekt jól tükrözi a JavaScript, az SVG-technológiák és a frontend architektúrák területén szerzett tapasztalataimat.</p>
+                <div class="project-tags">
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">TypeScript</span>
+                    <span class="project-tag">Vue.js</span>
+                    <span class="project-tag">React.js</span>
+                    <span class="project-tag">Angular</span>
+                    <span class="project-tag">Svelte</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="#" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
             </div>
-            <div class="process-step">
-                <div class="step-num">03</div>
-                <h3>Bekapcsolódás</h3>
-                <p>Megkapom a hozzáféréseket, megismerem a codebase-t, és elkezdem a munkát.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">04</div>
-                <h3>Szállítás &amp; átadás</h3>
-                <p>Rendszeres státuszok, clean commit history, és igény szerint dokumentáció.</p>
+            <div class="project-card project-placeholder">
+                <div class="project-type">WordPress bővítmény</div>
+                <h3>PixMagix</h3>
+                <p>PixMagix egy ingyenes, a WordPress.org-on elérhető WordPress-bővítmény, amely lehetővé teszi a médiatárban található képek szerkesztését közvetlenül a WordPress felületén. A felhasználói felület React és Redux technológiákkal készült, míg a háttérben a WordPress REST API biztosítja a zökkenőmentes integrációt. A projekt jól bemutatja, hogy modern frontend technológiák alkalmazásával képes vagyok összetett WordPress-bővítményeket fejleszteni a tervezéstől a megvalósításig.</p>
+                <div class="project-tags">
+                    <span class="project-tag">WordPress</span>
+                    <span class="project-tag">PHP</span>
+                    <span class="project-tag">React.js</span>
+                    <span class="project-tag">Redux</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="#" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-{{-- ── REFERENCES ── --}}
+<!-- REFERENCES -->
 <section id="references">
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referenciák</p>
-            <h2>Mit mondanak,<br>akikkel <em>dolgoztam</em></h2>
-            <p class="section-lead">Valódi projektek, valódi visszajelzések – cseréld le a saját referenciáidra.</p>
+            <h2>Nézd meg referenciáimat az <em>XProjekten</em></h2>
+            <p class="section-lead">Fent vagyok az XProjekten is, nézd meg a profilom.</p>
         </div>
         <div class="ref-grid">
             <div class="ref-card">
-                <p class="ref-quote">„Gyorsan bekapcsolódott a csapatba, minimális betanítással azonnal értéket hozott. A kódja tiszta, a kommunikációja precíz – pontosan azt kaptuk, amire szükségünk volt."</p>
+                <p class="ref-quote">„Gyorsan bekapcsolódott a csapatba, minimális betanítással azonnal produktív volt. A kódja tiszta, a kommunikációja precíz – pontosan azt kaptuk, amire szükségünk volt."</p>
                 <div class="ref-author">
                     <div class="ref-avatar">KG</div>
                     <div>
@@ -699,7 +275,7 @@
                 </div>
             </div>
             <div class="ref-card">
-                <p class="ref-quote">„Egy régi, rendezetlen codebase-t kellett felvennie és modernizálnia. Türelmesen, alaposan végezte a munkát, és dokumentálta is amit csinált. Ajánlom mindenkinek."</p>
+                <p class="ref-quote">„Egy régi, rendezetlen codebase-t kellett átvennie és modernizálnia. Türelmesen, alaposan végezte a munkát, és dokumentálta is amit csinált."</p>
                 <div class="ref-author">
                     <div class="ref-avatar">NP</div>
                     <div>
@@ -710,7 +286,7 @@
                 </div>
             </div>
             <div class="ref-card">
-                <p class="ref-quote">„Kapacitáshiányunk volt, és [NEV] tökéletesen töltötte be a rést. Sprintenként megbízható, határidőtartó, és kérdés nélkül beolvadt a Scrum folyamatainkba."</p>
+                <p class="ref-quote">„Kapacitáshiányunk volt, és András tökéletesen töltötte be a rést. Sprintenként megbízható, határidőtartó, és gond nélkül beolvadt a Scrum folyamatainkba."</p>
                 <div class="ref-author">
                     <div class="ref-avatar">MZ</div>
                     <div>
@@ -735,7 +311,7 @@
     </div>
 </section>
 
-{{-- ── CONTACT ── --}}
+<!-- CONTACT -->
 <section id="contact">
     <div class="container">
         <div class="contact-inner">
@@ -747,7 +323,7 @@
                 </div>
                 <div class="contact-right">
                     <p>
-                        Ha kapacitáshiányod van, érdekel a kiszervezés, vagy csak felmérjük, hogy tudnék-e segíteni –
+                        Ha kapacitáshiányod van, kiszerveznél egy projektet, vagy csak felmérjük hogy tudnék-e segíteni –
                         írj nyugodtan. Általában 24 órán belül válaszolok.
                     </p>
                     <div class="contact-links">
@@ -759,16 +335,11 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             LinkedIn profil
                         </a>
-                        <a href="tel:[TELEFON]" class="contact-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            [TELEFON]
-                        </a>
                     </div>
                 </div>
             </div>
             <div>
                 <form class="contact-form" method="POST" action="#">
-                    @csrf
                     <div class="form-group">
                         <label for="name">Neved / Céged</label>
                         <input type="text" id="name" name="name" placeholder="Pl. Kovács Péter / Acme Kft." required>
@@ -779,11 +350,11 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Miben segíthetek?</label>
-                        <textarea id="message" name="message" placeholder="Röviden írd le a feladatot, csapat méretét, és az ütemezési elvárásaidat..." required></textarea>
+                        <textarea id="message" name="message" placeholder="Röviden írd le a feladatot, a csapat méretét, és az ütemezési elvárásaidat..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" style="align-self: flex-start; border: none; cursor: pointer; font-family: var(--sans);">
+                    <button type="submit" class="btn-primary" style="align-self:flex-start; border:none; cursor:pointer; font-family:var(--sans);">
                         Üzenet küldése
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
                 </form>
             </div>
@@ -791,49 +362,4 @@
     </div>
 </section>
 
-{{-- ── FOOTER ── --}}
-<footer>
-    <div class="container">
-        <p>© {{ date('Y') }} [NEV] · Laravel & Vue.js fejlesztő · Szekszárd, Magyarország</p>
-    </div>
-</footer>
-
-<script>
-    // Smooth nav highlight on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.style.color = link.getAttribute('href') === '#' + entry.target.id
-                        ? 'var(--text)' : '';
-                });
-            }
-        });
-    }, { threshold: 0.3 });
-
-    sections.forEach(s => observer.observe(s));
-
-    // Fade-in on scroll
-    const fadeEls = document.querySelectorAll('.stat-box, .service-card, .ref-card, .process-step');
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    fadeEls.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(16px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        fadeObserver.observe(el);
-    });
-</script>
-
-</body>
-</html>
+@include('layout.footer')
