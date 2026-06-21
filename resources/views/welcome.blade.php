@@ -401,7 +401,7 @@
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
-            <h2>Tudtad, hogy magának az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek?</h2>
+            <h2>Képzeld, magában az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek!</h2>
             <p class="section-lead">Én alakíttam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
         </div>
     </div>
