@@ -435,6 +435,7 @@
                 </div>
             </div>
             <div>
+                <?php /* ?>
                 @if(session('contact_success'))
                     <div class="success-message">
                         Köszönöm az üzenetet! Hamarosan felveszem veled a kapcsolatot.
@@ -460,6 +461,7 @@
                         </button>
                     </form>
                 @endif
+                <?php */ ?>
             </div>
         </div>
     </div>
