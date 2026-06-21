@@ -627,6 +627,14 @@ footer {
         text-align: center;
         padding: 0.65rem 1rem !important;
     }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero-grid, .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .about-left { position: static; }
+    .services-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+    .ref-grid { grid-template-columns: 1fr; }
+    section { padding: 4rem 0; }
 }
 @media (max-width: 580px) {
     .projects-grid { grid-template-columns: 1fr; }
