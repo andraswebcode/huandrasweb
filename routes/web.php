@@ -8,6 +8,10 @@ use App\Mail\ContactMail;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/adatkezeles', function () {
+    return view('privacy');
+})->name('privacy');
 /*
 Route::get('/portfolio', function () {
     return view('portfolio');

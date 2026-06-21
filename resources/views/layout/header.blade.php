@@ -24,13 +24,13 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav>
-    <a href="#hero" class="nav-logo">Tövisháti András</a>
+    <a href="{{ url('/') }}" class="nav-logo">Tövisháti András</a>
     <ul class="nav-links">
-        <li><a href="#about">Rólam</a></li>
-        <li><a href="#services">Mivel segíthetek</a></li>
-        <li><a href="#hobby_projects">Projektek</a></li>
-        <li><a href="#testimonials">Vélemények</a></li>
-        <li><a href="#xprojekt">XProjekt</a></li>
-        <li><a href="#contact" class="nav-cta">Írj nekem</a></li>
+        <li><a href="{{ url('/#about') }}">Rólam</a></li>
+        <li><a href="{{ url('/#services') }}">Mivel segíthetek</a></li>
+        <li><a href="{{ url('/#hobby_projects') }}">Projektek</a></li>
+        <li><a href="{{ url('/#testimonials') }}">Vélemények</a></li>
+        <li><a href="{{ url('/#xprojekt') }}">XProjekt</a></li>
+        <li><a href="{{ url('/#contact') }}" class="nav-cta">Írj nekem</a></li>
     </ul>
 </nav>
