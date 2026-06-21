@@ -18,8 +18,9 @@
     <ul class="nav-links">
         <li><a href="#about">Rólam</a></li>
         <li><a href="#services">Mivel segíthetek</a></li>
-        <li><a href="#projects">Projektek</a></li>
-        <li><a href="#references">Referenciák</a></li>
+        <li><a href="#hobby_projects">Projektek</a></li>
+        <li><a href="#testimonials">Vélemények</a></li>
+        <li><a href="#xprojekt">XProjekt</a></li>
         <li><a href="#contact" class="nav-cta">Írj nekem</a></li>
     </ul>
 </nav>

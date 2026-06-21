@@ -26,7 +26,7 @@
 
             <div>
                 <div class="hero-profile">
-                    <img src="profile.png" alt="">
+                    <img src="{{ asset('images/profile.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                 </p>
 
                 <p>
-                    Évekig hobbi szinten fejlesztettem plugineket, amelyeket feltöltöttem <strong>az <a href="#">Envato marketplace-re</a>, ahol számos 5 csillagos értékelést kaptak.</strong> Ezek jelentették az első komoly sikerélményeimet.
+                    Évekig hobbi szinten fejlesztettem plugineket, amelyeket feltöltöttem <strong>az <a href="https://codecanyon.net/user/andrasweb">Envato marketplace-re</a>, ahol számos 5 csillagos értékelést kaptak.</strong> Ezek jelentették az első komoly sikerélményeimet.
                 </p>
 
                 <p>
@@ -78,7 +78,7 @@
                 </p>
 
                 <p>
-                    <strong>3 éve dolgozom szabadúszóként.</strong> Többnyire IT-cégeknek végzek fejlesztési munkákat, de készítettem már weboldalakat, webáruházakat, teljes platformokat és CRM-rendszereket is a nulláról.
+                    <strong>3 éve dolgozom szabadúszóként.</strong> Többnyire IT-cégeknek végzek fejlesztési munkákat, de készítettem már weboldalt, webáruházat, teljes platformot és CRM-rendszert is a nulláról.
                 </p>
 
                 <p>
@@ -95,14 +95,13 @@
                         Mindenki használ már AI-t a fejlesztéshez – én is. De fontos a különbség:
                         nálam az AI eszköz, nem helyettesítő. Minden generált kódot átnézek, megértem,
                         és csak akkor commitolom, ha felelősséget tudok vállalni érte.
-                        A "vibe coding" gyors, de töredékeny. Én inkább lassabb, de stabil kódot szállítok.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
+<?php /*
 <!-- WHY -->
 <section id="why">
     <div class="hero-bg"></div>
@@ -149,14 +148,14 @@
         </div>
     </div>
 </section>
-
+*/ ?>
 <!-- SERVICES -->
 <section id="services">
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Mivel segíthetek</p>
             <h2>Hol tudok <em>bekapcsolódni</em></h2>
-            <p class="section-lead">Órabérben, napi díjban, vagy projektalapon – a feladat szabja meg a formát.</p>
+            <p class="section-lead">Órabérben dolgozom. Csak annyit számlázok, amennyit valóban a gép előtt ülve a munkával töltöttem.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -191,12 +190,12 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="hobby_projects">
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Saját projektek</p>
             <h2>Amit <em>hobbiból</em> csináltam</h2>
-            <p class="section-lead">Nem minden fejlesztés ügyfélmunka – ezeket magamnak, kíváncsiságból építettem.</p>
+            <p class="section-lead">Nem minden fejlesztés ügyfélmunka. Ezeket magamnak, kíváncsiságból építettem.</p>
         </div>
         <div class="projects-grid">
             <div class="project-card project-placeholder">
@@ -210,7 +209,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="#" class="btn-secondary">
+                    <a href="https://pixkreator.com/" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -229,7 +228,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="#" class="btn-secondary">
+                    <a href="https://github.com/andraswebcode/grafikjs" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -246,7 +245,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="#" class="btn-secondary">
+                    <a href="https://wordpress.org/plugins/pixmagix/" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -256,58 +255,152 @@
 </section>
 
 <!-- REFERENCES -->
-<section id="references">
+<section id="testimonials">
     <div class="container">
         <div class="section-header">
-            <p class="section-eyebrow">Referenciák</p>
-            <h2>Nézd meg referenciáimat az <em>XProjekten</em></h2>
-            <p class="section-lead">Fent vagyok az XProjekten is, nézd meg a profilom.</p>
+            <p class="section-eyebrow">Vélemények</p>
+            <h2>Mit mondanak <em>Mások</em> a munkáimról</h2>
+            <p class="section-lead">Az évek során összegyűlt pár vélemény innen-onnan.</p>
         </div>
         <div class="ref-grid">
             <div class="ref-card">
-                <p class="ref-quote">„Gyorsan bekapcsolódott a csapatba, minimális betanítással azonnal produktív volt. A kódja tiszta, a kommunikációja precíz – pontosan azt kaptuk, amire szükségünk volt."</p>
+                <p class="ref-quote">„Nagyon jó választás Andris, mindenben nagyon segítőkész, válaszol, ötletel és a kivitelezése is hibátlan!"</p>
                 <div class="ref-author">
-                    <div class="ref-avatar">KG</div>
+                    <div class="ref-avatar">M</div>
                     <div>
-                        <div class="ref-name">[Ügyfél neve]</div>
-                        <div class="ref-role">CTO, [Cég neve]</div>
+                        <div class="ref-name">Murdock</div>
                     </div>
-                    <span class="ref-tag">Laravel projekt</span>
+                    <span class="ref-tag">Az XProjekten</span>
                 </div>
             </div>
             <div class="ref-card">
-                <p class="ref-quote">„Egy régi, rendezetlen codebase-t kellett átvennie és modernizálnia. Türelmesen, alaposan végezte a munkát, és dokumentálta is amit csinált."</p>
+                <p class="ref-quote">„Andrással készíttettük el a honlapunkat, és maximálisan elégedettek vagyunk a munkájával. Gyors, precíz és rendkívül profi hozzáállást tanúsított a teljes folyamat során. Csak ajánlani tudjuk mindenkinek, aki megbízható szakembert keres weboldalkészítéshez."</p>
                 <div class="ref-author">
-                    <div class="ref-avatar">NP</div>
+                    <div class="ref-avatar">F</div>
                     <div>
-                        <div class="ref-name">[Ügyfél neve]</div>
-                        <div class="ref-role">Vezető fejlesztő, [Cég neve]</div>
+                        <div class="ref-name">FaceTill Ltd XProjekt</div>
                     </div>
-                    <span class="ref-tag">Refaktor</span>
+                    <span class="ref-tag">Az XProjekten</span>
                 </div>
             </div>
             <div class="ref-card">
-                <p class="ref-quote">„Kapacitáshiányunk volt, és András tökéletesen töltötte be a rést. Sprintenként megbízható, határidőtartó, és gond nélkül beolvadt a Scrum folyamatainkba."</p>
+                <p class="ref-quote">„Great product, quality code and generous customer service. Waiting to see more surprises in future updates. Thank you very much!"</p>
                 <div class="ref-author">
-                    <div class="ref-avatar">MZ</div>
+                    <div class="ref-avatar">I</div>
                     <div>
-                        <div class="ref-name">[Ügyfél neve]</div>
-                        <div class="ref-role">Scrum master, [Cég neve]</div>
+                        <div class="ref-name">Instarep</div>
                     </div>
-                    <span class="ref-tag">Hosszú táv</span>
+                    <span class="ref-tag">A CodeCanyon-on</span>
                 </div>
             </div>
             <div class="ref-card">
-                <p class="ref-quote">„Vue.js fronton volt szükségünk segítségre, és nagyon profin megoldotta. Látszik, hogy érti a teljes stacket, nem csak az egyik réteget."</p>
+                <p class="ref-quote">„I’ve stumbled upon a rare gem of a plugin for WordPress and WooCommerce. This nifty tool lets you edit images directly within your media, posts, and products. The best part? It’s not just for basic tweaks—you can dive in deep and make some seriously advanced modifications right from your site without downloading or uploading anything. Imagine not having to jump between different software to get that perfect look for your product images. It’s like having a mini Photoshop built right into your site! This plugin is an absolute game-changer if you’re looking to streamline your workflow and keep everything neatly within WordPress."</p>
                 <div class="ref-author">
-                    <div class="ref-avatar">BT</div>
+                    <div class="ref-avatar">M</div>
                     <div>
-                        <div class="ref-name">[Ügyfél neve]</div>
-                        <div class="ref-role">Product Owner, [Cég neve]</div>
+                        <div class="ref-name">mysmallstore</div>
                     </div>
-                    <span class="ref-tag">Vue.js / API</span>
+                    <span class="ref-tag">A WordPress.org-on</span>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="reference_1">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-eyebrow">Referencia</p>
+            <h2>Hallottál már <em>Balugasztroról?</em></h2>
+            <p class="section-lead">A fiatal YouTuber pár, akik 2024-ben egy hátizsákkal körbeutazták a világot. Az ő weboldalukat én készítettem.</p>
+        </div>
+        <div class="reference-balugasztro-image">
+            <img src="{{ asset('images/balugasztro.jpg') }}" alt="">
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="xprojekt">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-eyebrow">Szolgáltatások</p>
+            <h2>Szolgáltatásaim az <em>XProjekten</em></h2>
+            <p class="section-lead">Ha csak projekt alapú együttműködésre van szükséged és biztosra akarsz menni, akkor rendelj tőlem az XProjekten.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card project-placeholder">
+                <div class="project-type">
+                    <img src="{{ asset('images/webshop.webp') }}" alt="">
+                </div>
+                <h3>Egyedi, Gyors és Skálázható Webáruház Fejlesztés</h3>
+                <p>Egy webáruház akkor működik igazán hatékonyan, ha nem neked kell alkalmazkodnod a rendszerhez, hanem a rendszer igazodik a vállalkozásod működéséhez. A sablon alapú megoldások, mint a WooCommerce, sokszor már a kezdetektől kompromisszumokra kényszerítenek: külső bővítményekre támaszkodnak, nehezebben testreszabhatók, és a forgalom növekedésével egyre instabilabbá, lassabbá válhatnak.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Laravel</span>
+                    <span class="project-tag">MySQL</span>
+                    <span class="project-tag">Vue.js</span>
+                    <span class="project-tag">Inertia</span>
+                    <span class="project-tag">TypeScript</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="https://xprojekt.hu/szolgaltatas/egyedi-gyors-es-skalazhato-webaruhaz-fejlesztes" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
+            </div>
+            <div class="project-card project-placeholder">
+                <div class="project-type">
+                    <img src="{{ asset('images/crm.webp') }}" alt="">
+                </div>
+                <h3>Egyedi skálázható CRM rendszer</h3>
+                <p>Egy CRM rendszer célja, hogy egyszerűsítse a működésedet, átláthatóbbá tegye az ügyfél- és partnerkezelést, valamint csökkentse a manuális adminisztrációt. A sablonos, dobozos rendszerek gyakran nem fedik le pontosan az üzleti igényeket, vagy túl bonyolultak, felesleges funkciókkal terheltek. Egy egyedi CRM ezzel szemben úgy épül fel, ahogy a vállalkozásod működik, így nem kell kompromisszumokat kötni vagy a folyamataidat egy kész rendszerhez igazítani.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Laravel</span>
+                    <span class="project-tag">MySQL</span>
+                    <span class="project-tag">Vue.js</span>
+                    <span class="project-tag">Inertia</span>
+                    <span class="project-tag">TypeScript</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="https://xprojekt.hu/szolgaltatas/egyedi-skalazhato-crm-rendszer" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
+            </div>
+            <div class="project-card project-placeholder">
+                <div class="project-type">
+                    <img src="{{ asset('images/wordpress.webp') }}" alt="">
+                </div>
+                <h3>WordPress Weboldal Készítés</h3>
+                <p>Ha egy gyors, átlátható és könnyen kezelhető weboldalra van szükséged, segítek a teljes beállításban, hogy gördülékenyen indulhass el az online térben.</p>
+                <div class="project-tags">
+                    <span class="project-tag">WordPress</span>
+                    <span class="project-tag">PHP</span>
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">CSS</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="https://xprojekt.hu/szolgaltatas/wordpress-weboldal-keszites-2" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="reference_2">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-eyebrow">Referencia</p>
+            <h2>Tudtad, hogy magának az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek?</h2>
+            <p class="section-lead">A projektben én alakíttam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
         </div>
     </div>
 </section>
@@ -328,11 +421,11 @@
                         írj nyugodtan. Általában 24 órán belül válaszolok.
                     </p>
                     <div class="contact-links">
-                        <a href="mailto:[EMAIL]" class="contact-link">
+                        <a href="mailto:info@andrasweb.com" class="contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            [EMAIL]
+                            info@andrasweb.com
                         </a>
-                        <a href="https://linkedin.com/in/[LINKEDIN]" target="_blank" rel="noopener" class="contact-link">
+                        <a href="https://www.linkedin.com/in/andras-tovishati/" target="_blank" rel="noopener" class="contact-link">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             LinkedIn profil
                         </a>
