@@ -209,7 +209,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="https://pixkreator.com/" class="btn-secondary">
+                    <a href="https://pixkreator.com/" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="https://github.com/andraswebcode/grafikjs" class="btn-secondary">
+                    <a href="https://github.com/andraswebcode/grafikjs" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -245,7 +245,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="https://wordpress.org/plugins/pixmagix/" class="btn-secondary">
+                    <a href="https://wordpress.org/plugins/pixmagix/" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -312,8 +312,8 @@
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
-            <h2>Ismered <em>Balugasztrót?</em></h2>
-            <p class="section-lead">A fiatal YouTuber párt, akik 2024-ben egy hátizsákkal körbeutazta a világot. Az ő <a href="https://balugasztro.hu/" target="_blank">weboldalukat</a> én készítettem.</p>
+            <h2>Ismered <em>Balugasztrot?</em></h2>
+            <p class="section-lead">A fiatal YouTuber párt, aki 2024-ben egy hátizsákkal körbeutazta a világot. Az ő <a href="https://balugasztro.hu/" target="_blank">weboldalukat</a> én készítettem.</p>
         </div>
         <div class="reference-balugasztro-image">
             <a href="https://balugasztro.hu/" target="_blank">
@@ -347,7 +347,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="https://xprojekt.hu/szolgaltatas/egyedi-gyors-es-skalazhato-webaruhaz-fejlesztes" class="btn-secondary">
+                    <a href="https://xprojekt.hu/szolgaltatas/egyedi-gyors-es-skalazhato-webaruhaz-fejlesztes" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -367,7 +367,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="https://xprojekt.hu/szolgaltatas/egyedi-skalazhato-crm-rendszer" class="btn-secondary">
+                    <a href="https://xprojekt.hu/szolgaltatas/egyedi-skalazhato-crm-rendszer" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -386,7 +386,7 @@
                 </div>
                 <div class="flex-1"></div>
                 <div class="mt-2">
-                    <a href="https://xprojekt.hu/szolgaltatas/wordpress-weboldal-keszites-2" class="btn-secondary">
+                    <a href="https://xprojekt.hu/szolgaltatas/wordpress-weboldal-keszites-2" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
