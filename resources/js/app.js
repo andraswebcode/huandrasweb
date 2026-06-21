@@ -29,3 +29,21 @@ fadeEls.forEach((el, i) => {
 	el.style.transition = `opacity 0.45s ease ${i * 0.04}s, transform 0.45s ease ${i * 0.04}s`;
 	fadeObserver.observe(el);
 });
+
+const hamburger = document.getElementById('navHamburger');
+const navLinks  = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+	const isOpen = navLinks.classList.toggle('open');
+	hamburger.classList.toggle('open', isOpen);
+	hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Linkre kattintáskor záródjon be
+navLinks.querySelectorAll('a').forEach(link => {
+	link.addEventListener('click', () => {
+		navLinks.classList.remove('open');
+		hamburger.classList.remove('open');
+		hamburger.setAttribute('aria-expanded', 'false');
+	});
+});
