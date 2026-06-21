@@ -13,7 +13,7 @@
 		</p>
 		<p>
 			A Google adatkezelési gyakorlatáról további információ az alábbi oldalon érhető el:
-			<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+			<a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
 		</p>
 	</div>
 </section>
