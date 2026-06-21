@@ -11,7 +11,7 @@
                 <h1>Tövisháti András vagyok <em> szabadúszó webfejlesztő</em></h1>
 
                 <p class="hero-sub">
-                    7 éve foglalkozom SaaS alkalmazások, és egyedi wordpress bővítmények fejlesztésével. Eleinte csak hobbiból fejlesztettem, ma már cégeknek segítek be a fejlesztésbe.
+                    7 éve foglalkozom SaaS alkalmazások, és egyedi WordPress bővítmények fejlesztésével. Eleinte csak hobbiból fejlesztettem, ma már cégeknek segítek be a fejlesztésbe.
                     <br>
                     Dolgozzunk együtt :-)
                 </p>
@@ -435,7 +435,6 @@
                 </div>
             </div>
             <div>
-                <?php /* ?>
                 @if(session('contact_success'))
                     <div class="success-message">
                         Köszönöm az üzenetet! Hamarosan felveszem veled a kapcsolatot.
@@ -461,7 +460,6 @@
                         </button>
                     </form>
                 @endif
-                <?php */ ?>
             </div>
         </div>
     </div>
