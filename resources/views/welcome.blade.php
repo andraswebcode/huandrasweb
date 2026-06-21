@@ -205,6 +205,7 @@
                 <p>PixKreator egy Vue.js és Vuetify alapú egyoldalas alkalmazás (SPA), amely gyors és reszponzív felhasználói élményt biztosít. A backend Laravelre épül, MySQL adatbázist használ, míg a megjelenést Tailwind CSS alapú dizájn támogatja. A frontend és a backend REST API-n keresztül kommunikál, így a projekt jól szemlélteti a frontend- és backend-fejlesztésben szerzett tapasztalataimat, valamint a modern webalkalmazások teljes körű fejlesztésében való jártasságomat.</p>
                 <div class="project-tags">
                     <span class="project-tag">Laravel</span>
+                    <span class="project-tag">MySQL</span>
                     <span class="project-tag">Vue.js</span>
                 </div>
                 <div class="flex-1"></div>
