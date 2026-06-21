@@ -312,11 +312,13 @@
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
-            <h2>Hallottál már <em>Balugasztroról?</em></h2>
-            <p class="section-lead">A fiatal YouTuber pár, akik 2024-ben egy hátizsákkal körbeutazták a világot. Az ő weboldalukat én készítettem.</p>
+            <h2>Ismered <em>Balugasztrót?</em></h2>
+            <p class="section-lead">A fiatal YouTuber párt, akik 2024-ben egy hátizsákkal körbeutazta a világot. Az ő <a href="https://balugasztro.hu/" target="_blank">weboldalukat</a> én készítettem.</p>
         </div>
         <div class="reference-balugasztro-image">
-            <img src="{{ asset('images/balugasztro.jpg') }}" alt="">
+            <a href="https://balugasztro.hu/" target="_blank">
+                <img src="{{ asset('images/balugasztro.jpg') }}" alt="">
+            </a>
         </div>
     </div>
 </section>
@@ -400,7 +402,7 @@
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
             <h2>Tudtad, hogy magának az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek?</h2>
-            <p class="section-lead">A projektben én alakíttam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
+            <p class="section-lead">Én alakíttam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
         </div>
     </div>
 </section>
