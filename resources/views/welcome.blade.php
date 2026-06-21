@@ -435,24 +435,31 @@
                 </div>
             </div>
             <div>
-                <form class="contact-form" method="POST" action="#">
-                    <div class="form-group">
-                        <label for="name">Neved / Céged</label>
-                        <input type="text" id="name" name="name" placeholder="Pl. Kovács Péter / Acme Kft." required>
+                @if(session('contact_success'))
+                    <div class="success-message">
+                        Köszönöm az üzenetet! Hamarosan felveszem veled a kapcsolatot.
                     </div>
-                    <div class="form-group">
-                        <label for="email">E-mail cím</label>
-                        <input type="email" id="email" name="email" placeholder="pelda@ceg.hu" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Miben segíthetek?</label>
-                        <textarea id="message" name="message" placeholder="Röviden írd le a feladatot, a csapat méretét, és az ütemezési elvárásaidat..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="align-self:flex-start; border:none; cursor:pointer; font-family:var(--sans);">
-                        Üzenet küldése
-                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                </form>
+                @else
+                    <form class="contact-form" method="POST" action="{{ route('contact.send') }}">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Neved / Céged</label>
+                            <input type="text" id="name" name="name" placeholder="Pl. Kovács Péter / Acme Kft." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail cím</label>
+                            <input type="email" id="email" name="email" placeholder="pelda@ceg.hu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Miben segíthetek?</label>
+                            <textarea id="message" name="message" placeholder="Írj nekem valamit :)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="align-self:flex-start; border:none; cursor:pointer; font-family:var(--sans);">
+                            Üzenet küldése
+                            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>
