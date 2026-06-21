@@ -31,16 +31,16 @@ fadeEls.forEach((el, i) => {
 });
 
 const hamburger = document.getElementById('navHamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinksId  = document.getElementById('navLinks');
 
 hamburger.addEventListener('click', () => {
-	const isOpen = navLinks.classList.toggle('open');
+	const isOpen = navLinksId.classList.toggle('open');
 	hamburger.classList.toggle('open', isOpen);
 	hamburger.setAttribute('aria-expanded', isOpen);
 });
 
 // Linkre kattintáskor záródjon be
-navLinks.querySelectorAll('a').forEach(link => {
+navLinksId.querySelectorAll('a').forEach(link => {
 	link.addEventListener('click', () => {
 		navLinks.classList.remove('open');
 		hamburger.classList.remove('open');
