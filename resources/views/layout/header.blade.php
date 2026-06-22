@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    @php // <script src="https://www.google.com/recaptcha/enterprise.js?render={{ config('services.recaptcha.site') }}"></script> @endphp
 	@vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
