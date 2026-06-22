@@ -82,7 +82,7 @@
                 </p>
 
                 <p>
-                    Tapasztalat tekintetében valahol a junior és a senior szint között helyezem el magam. Ez azt jelenti, hogy még bőven van hová fejlődnöm, ugyanakkor már nincs szükség folyamatos iránymutatásra, és nagyobb felelősséggel járó feladatokat is nyugodtan rám lehet bízni.
+                    Tapasztalat szempontjából egy olyan szinten tartok, ahol még folyamatosan fejlődöm és bővítem a tudásomat, ugyanakkor már önállóan is hatékonyan dolgozom. Nem igényelek állandó iránymutatást, és a nagyobb felelősséggel járó feladatok ellátása sem jelent problémát számomra.
                 </p>
 
                 <p>
@@ -401,7 +401,7 @@
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
-            <h2>Képzeld, magában az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek!</h2>
+            <h2>Az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek!</h2>
             <p class="section-lead">Én alakíttam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
         </div>
     </div>
