@@ -82,7 +82,7 @@
                 </p>
 
                 <p>
-                    Folyamatosan fejlődöm és bővítem a tudásomat, ugyanakkor már önállóan is hatékonyan dolgozom. Nem igényelek állandó iránymutatást, és a nagyobb felelősséggel járó feladatok ellátása sem jelent problémát számomra.
+                    Munkám során önállóan és felelősségteljesen dolgozom. Nem igényelek folyamatos iránymutatást, és a nagyobb felelősséggel járó feladatokat is magabiztosan vállalom. Emellett fontosnak tartom a folyamatos tanulást és a szakmai fejlődést, ezért rendszeresen bővítem a tudásomat új technológiákkal és módszerekkel.
                 </p>
 
                 <p>
