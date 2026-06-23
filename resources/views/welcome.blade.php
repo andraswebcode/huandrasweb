@@ -41,7 +41,6 @@
                 <div class="section-header">
                     <p class="section-eyebrow">Rólam</p>
                     <h2>7 éve csinálom,<br><em>mert szeretem.</em></h2>
-                    <div class="accent-line"></div>
                 </div>
                 <div class="tech-list">
                     <span class="tech-tag accent">Laravel</span>
@@ -153,7 +152,7 @@
 <section id="services">
     <div class="container">
         <div class="section-header">
-            <p class="section-eyebrow">Mivel segíthetek</p>
+            <p class="section-eyebrow">Miben segíthetek</p>
             <h2>Hol tudok <em>bekapcsolódni</em></h2>
             <p class="section-lead">Órabérben dolgozom. Csak annyit számlázok, amennyit valóban a gép előtt ülve a munkával töltöttem.</p>
         </div>
@@ -210,6 +209,23 @@
                 <div class="flex-1"></div>
                 <div class="mt-2">
                     <a href="https://pixkreator.com/" target="_blank" class="btn-secondary">
+                        Nézd meg
+                    </a>
+                </div>
+            </div>
+            <div class="project-card project-placeholder">
+                <div class="project-type">SaaS / AI</div>
+                <h3>XRobi</h3>
+                <p>Az XRobi egy AI-alapú kurzuskészítő platform Laravel és Vue.js technológiákkal. Egy strukturált interjú során feltérképezi az oktató tudását, majd az OpenAI API segítségével automatikusan létrehozza a kurzusvázlatot, a modulokat és a leckéket. A rendszer megőrzi a beszélgetési kontextust, támogatja a tartalmak szerkesztését, és hatékonyan kezeli a több lépéses AI-folyamatokat. A Vue.js frontend és a skálázható Laravel backend együtt biztosítja az AI-alapú oktatási tartalomkészítés gyakorlati megvalósítását.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Laravel</span>
+                    <span class="project-tag">MySQL</span>
+                    <span class="project-tag">Vue.js</span>
+                    <span class="project-tag">OpenAI API</span>
+                </div>
+                <div class="flex-1"></div>
+                <div class="mt-2">
+                    <a href="https://xrobi.hu/" target="_blank" class="btn-secondary">
                         Nézd meg
                     </a>
                 </div>
@@ -313,7 +329,7 @@
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
             <h2>Ismered a <em>Balugasztrot?</em></h2>
-            <p class="section-lead">A fiatal YouTuber párt, aki 2024-ben egy hátizsákkal körbeutazta a világot. Az ő <a href="https://balugasztro.hu/" target="_blank">weboldalukat</a> én készítettem.</p>
+            <p class="section-lead">A fiatal YouTuber párt, aki 2024-ben egy hátizsákkal körbeutazta a világot. Az ő <a href="https://balugasztro.hu/" target="_blank">weboldalukat</a> is én készítettem.</p>
         </div>
         <div class="reference-balugasztro-image">
             <a href="https://balugasztro.hu/" target="_blank">
@@ -402,7 +418,10 @@
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
             <h2>Az <em>XProjekt platform</em> a fejlesztésében is részt veszek!</h2>
-            <p class="section-lead">Én alakítottam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
+            <p class="section-lead mb-4">Én alakítottam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
+            <a href="https://xprojekt.hu" target="_blank" class="btn-secondary">
+                Nézd meg
+            </a>
         </div>
     </div>
 </section>
@@ -414,8 +433,7 @@
             <div>
                 <div class="section-header">
                     <p class="section-eyebrow">Kapcsolat</p>
-                    <h2>Dolgozzunk<br><em>együtt</em></h2>
-                    <div class="accent-line"></div>
+                    <h2>Dolgozzunk <em>együtt</em></h2>
                 </div>
                 <div class="contact-right">
                     <p>

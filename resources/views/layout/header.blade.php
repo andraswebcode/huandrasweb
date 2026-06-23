@@ -29,7 +29,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="{{ url('/') }}" class="nav-logo">Tövisháti András</a>
     <ul class="nav-links" id="navLinks">
         <li><a href="{{ url('/#about') }}">Rólam</a></li>
-        <li><a href="{{ url('/#services') }}">Mivel segíthetek</a></li>
+        <li><a href="{{ url('/#services') }}">Miben segíthetek</a></li>
         <li><a href="{{ url('/#hobby_projects') }}">Projektek</a></li>
         <li><a href="{{ url('/#testimonials') }}">Vélemények</a></li>
         <li><a href="{{ url('/#xprojekt') }}">XProjekt</a></li>
