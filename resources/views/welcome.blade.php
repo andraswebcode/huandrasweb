@@ -82,7 +82,7 @@
                 </p>
 
                 <p>
-                    Tapasztalat szempontjából egy olyan szinten tartok, ahol még folyamatosan fejlődöm és bővítem a tudásomat, ugyanakkor már önállóan is hatékonyan dolgozom. Nem igényelek állandó iránymutatást, és a nagyobb felelősséggel járó feladatok ellátása sem jelent problémát számomra.
+                    Folyamatosan fejlődöm és bővítem a tudásomat, ugyanakkor már önállóan is hatékonyan dolgozom. Nem igényelek állandó iránymutatást, és a nagyobb felelősséggel járó feladatok ellátása sem jelent problémát számomra.
                 </p>
 
                 <p>
@@ -312,7 +312,7 @@
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
-            <h2>Ismered <em>Balugasztrot?</em></h2>
+            <h2>Ismered a <em>Balugasztrot?</em></h2>
             <p class="section-lead">A fiatal YouTuber párt, aki 2024-ben egy hátizsákkal körbeutazta a világot. Az ő <a href="https://balugasztro.hu/" target="_blank">weboldalukat</a> én készítettem.</p>
         </div>
         <div class="reference-balugasztro-image">
@@ -401,8 +401,8 @@
     <div class="container">
         <div class="section-header">
             <p class="section-eyebrow">Referencia</p>
-            <h2>Az <em>XProjekt platformnak</em> a fejlesztésében is részt veszek!</h2>
-            <p class="section-lead">Én alakíttam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
+            <h2>Az <em>XProjekt platform</em> a fejlesztésében is részt veszek!</h2>
+            <p class="section-lead">Én alakítottam ki a rendszer alapvető struktúráját, architektúráját és designját, valamint aktívan részt veszek a platform fejlesztésében.</p>
         </div>
     </div>
 </section>
