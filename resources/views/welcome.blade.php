@@ -69,7 +69,7 @@
                 </p>
 
                 <p>
-                    Évekig hobbi szinten fejlesztettem plugineket, amelyeket feltöltöttem <strong>az <a href="https://codecanyon.net/user/andrasweb">Envato marketplace-re</a>, ahol számos 5 csillagos értékelést kaptak.</strong> Ezek jelentették az első komoly sikerélményeimet.
+                    Eleinte csak hobbi szinten fejlesztettem plugineket, majd <strong>az <a href="https://codecanyon.net/user/andrasweb">Envato marketplace-en</a> értékesítettem, ahol 5 csillagos értékeléseket kaptam.</strong>
                 </p>
 
                 <p>
